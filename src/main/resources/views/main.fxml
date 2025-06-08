@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane fx:id="mainPane"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="restaurante.controllers.MainController"
+            stylesheets="@/views/styles.css">
+    <!-- Zona lateral izquierda con título y botones -->
+    <left>
+        <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <VBox spacing="10" styleClass="sidebar" alignment="TOP_CENTER" prefWidth="240">
+                <Label fx:id="estadoConexionLabel" text="Estado de conexión" style="-fx-font-size: 14px; -fx-text-fill: gray;" />
+
+                <Label text="{OidoChef}" styleClass="app-title" />
+
+                <VBox spacing="32" alignment="CENTER" styleClass="navbar">
+                    <Button text="Ver Mesas" onAction="#loadVolverInicio" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button text="Agregar Producto" onAction="#loadAgregarProducto" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button text="Gestionar Usuarios" onAction="#loadGestionUsuarios" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button text="Nueva Reserva" onAction="#loadNuevaReserva" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button text="Ver Reservas" onAction="#loadVerReservas" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Separator />
+                    <Button fx:id="btnAddMesa" text="Añadir Mesa" styleClass="btn-control" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button fx:id="btnEliminarMesa" text="Eliminar Mesa" styleClass="btn-control" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button fx:id="btnGuardarPosiciones" text="Guardar Posiciones" styleClass="btn-control" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button text="Ver README" onAction="#abrirReadme" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
+
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </left>
+
+
+    <!-- Contenido central -->
+    <center>
+        <StackPane fx:id="contentPane" styleClass="glass-center">
+
+            <!-- Vista de bienvenida -->
+            <VBox fx:id="welcomeView" alignment="CENTER" spacing="20">
+                <Text text="Bienvenido a { OidoChef }" styleClass="welcome-title" />
+                <Text text="Selecciona una opción del menú lateral" styleClass="welcome-subtitle" />
+            </VBox>
+
+            <!-- Panel de mesas visible directamente -->
+            <ScrollPane fx:id="scrollMesas" fitToWidth="true" fitToHeight="true" styleClass="scroll-area">
+                <Pane fx:id="mesaPane" minWidth="700" minHeight="600" styleClass="mesa-pane"/>
+            </ScrollPane>
+        </StackPane>
+    </center>
+</BorderPane>

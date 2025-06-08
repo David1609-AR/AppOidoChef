@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="restaurante.controllers.PedidoController"
+            stylesheets="@styles.css"
+            prefWidth="800" prefHeight="600">
+
+    <top>
+        <Label text="Gestión de Pedido" styleClass="retro-title" BorderPane.alignment="CENTER" />
+    </top>
+    <left>
+        <ScrollPane fitToWidth="true" fitToHeight="true" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER" BorderPane.alignment="TOP_LEFT">
+            <VBox fx:id="contenedorCategorias" spacing="8" />
+        </ScrollPane>
+    </left>
+
+
+    <center>
+        <VBox spacing="12" styleClass="retro-pane">
+            <Label text="Pedido Actual" styleClass="retro-title" />
+            <ListView fx:id="listViewPedido" prefHeight="400" />
+            <Label fx:id="labelTotal" text="Total: 0.00€" style="-fx-font-size: 16px;" />
+            <HBox spacing="10">
+                <Button text="Enviar Pedido" onAction="#enviarPedido" styleClass="navbar" />
+                <Button text="Cobrar Mesa" onAction="#cobrarMesa" styleClass="navbar" />
+                <Button text="Eliminar Producto" onAction="#eliminarProductoSeleccionado" styleClass="navbar" />
+                <Button text="Ver Cocina" onAction="#abrirVistaCocina" styleClass="navbar" />
+                <Button text="Cerrar" onAction="#cerrarVentana" styleClass="navbar" />
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

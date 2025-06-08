@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="restaurante.controllers.AgregarController"
+      spacing="15"
+      style="-fx-padding: 20; -fx-background-color: #f9f9f9;">
+
+    <Text text="Gestión de Productos" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <!-- Tabla de productos -->
+    <TableView fx:id="tablaProductos" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="id" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="nombre" text="Nombre" prefWidth="150"/>
+            <TableColumn fx:id="descripcion" text="Descripción" prefWidth="200"/>
+            <TableColumn fx:id="precio" text="Precio (€)" prefWidth="100"/>
+            <TableColumn fx:id="categoria" text="Categoría" prefWidth="150"/>
+            <TableColumn fx:id="tieneIva" text="IVA" prefWidth="80"/>
+        </columns>
+    </TableView>
+
+    <!-- Formulario producto -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Descripción:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtDescripcion" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Precio:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPrecio" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Categoría:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbCategoria" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="¿Tiene IVA?" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <CheckBox fx:id="chkTieneIva" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Label fx:id="productoStatus" textFill="red"/>
+
+    <!-- Botones producto -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Nuevo" onAction="#nuevoProducto"/>
+        <Button text="Editar" onAction="#editarProducto"/>
+        <Button text="Eliminar" onAction="#eliminarProducto"/>
+        <Button text="Guardar" onAction="#guardarProducto"/>
+        <Button text="Cancelar" onAction="#cancelarEdicion"/>
+    </HBox>
+
+</VBox>

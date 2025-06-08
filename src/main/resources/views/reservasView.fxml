@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="restaurante.controllers.NuevaReservaController"
+      spacing="20"
+      style="-fx-padding: 25; -fx-background-color: #f9f9f9;">
+
+    <Text text="Crear Nueva Reserva" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Teléfono:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="telefonoField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Email:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="emailField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Personas:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Spinner fx:id="personasSpinner" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Mesa:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="mesaCombo" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Fecha:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="fechaPicker" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Hora:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="horaCombo" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Crear Reserva" onAction="#handleCrearReserva"/>
+    </HBox>
+
+    <Separator/>
+
+    <Text text="Reservas Actuales" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="tablaReservas" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="150"/>
+            <TableColumn fx:id="colFecha" text="Fecha" prefWidth="120"/>
+            <TableColumn fx:id="colHora" text="Hora" prefWidth="100"/>
+            <TableColumn fx:id="colPersonas" text="Personas" prefWidth="80"/>
+            <TableColumn fx:id="colMesa" text="Mesa" prefWidth="80"/>
+        </columns>
+    </TableView>
+</VBox>

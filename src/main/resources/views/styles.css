@@ -1,0 +1,102 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #F9EBC7; /* crema */
+}
+
+.label, .text {
+    -fx-text-fill: #3C2A25; /* marrón oscuro */
+}
+
+.app-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #127179; /* verde petróleo */
+}
+
+.sidebar {
+    -fx-background-color: #59dacf; /* salmón claro */
+    -fx-padding: 20;
+    -fx-border-color: #B7ADAC;
+    -fx-border-width: 0 1px 0 0;
+}
+
+/* === BOTONES DE NAVEGACIÓN === */
+.btn-navbar {
+    -fx-background-color: #EB732B; /* naranja retro */
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #D1601A;
+}
+
+.btn-navbar:hover {
+    -fx-background-color: #C2561B;
+}
+
+/* === BOTONES DE CONTROL === */
+.btn-control {
+    -fx-background-color: #127179; /* verde petróleo */
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #0D5056;
+}
+
+.btn-control:hover {
+    -fx-background-color: #0D5056;
+}
+
+/* === ÁREAS DE PEDIDO Y MESAS === */
+.retro-pane {
+    -fx-background-color: #d5f472;
+    -fx-background-radius: 15;
+    -fx-padding: 15;
+    -fx-border-color: #B7ADAC;
+    -fx-border-radius: 15;
+}
+
+.retro-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #3C2A25;
+    -fx-font-weight: bold;
+}
+
+.retro-button {
+    -fx-background-color: #B7ADAC; /* gris lavanda */
+    -fx-text-fill: #3C2A25;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #999;
+}
+
+.retro-button:hover {
+    -fx-background-color: #A59A99;
+}
+
+/* === BOTONES DE CATEGORÍA === */
+.categoria-button {
+    -fx-background-color: #EB732B;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 10 14;
+    -fx-border-color: #C2561B;
+}
+
+.categoria-button:hover {
+    -fx-background-color: #C2561B;
+}
+
+/* === LISTAS === */
+.list-view {
+    -fx-background-color: #e3d9d9;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+

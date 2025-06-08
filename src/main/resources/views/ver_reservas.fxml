@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="restaurante.controllers.VerReservasController"
+      stylesheets="@/views/styles.css"
+      spacing="15"
+      style="-fx-padding: 20; -fx-background-color: #f5f5f5;">
+
+    <!-- Título de la vista -->
+    <Text text="Gestión de Reservas" styleClass="view-title"/>
+
+    <!-- Panel de filtros -->
+    <HBox styleClass="filter-panel" spacing="10">
+        <Label text="Filtrar por fecha:" styleClass="filter-label"/>
+        <DatePicker fx:id="fechaFiltro" styleClass="filter-field"/>
+
+        <Label text="Buscar:" styleClass="filter-label"/>
+        <TextField fx:id="busquedaField" styleClass="filter-field" promptText="Nombre o número de mesa"/>
+    </HBox>
+
+    <!-- Tabla de reservas -->
+    <TableView fx:id="reservasTable" styleClass="reservas-table">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" styleClass="table-column" prefWidth="60"/>
+            <TableColumn fx:id="nombreColumn" text="Nombre" styleClass="table-column" prefWidth="150"/>
+            <TableColumn fx:id="mesaColumn" text="Mesa" styleClass="table-column" prefWidth="80"/>
+            <TableColumn fx:id="fechaColumn" text="Fecha" styleClass="table-column" prefWidth="120"/>
+            <TableColumn fx:id="estadoColumn" text="Estado" styleClass="table-column" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Botones de acción -->
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Button text="Cancelar Reserva" onAction="#handleCancelarReserva" styleClass="danger-button"/>
+    </HBox>
+</VBox>
