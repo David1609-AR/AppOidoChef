@@ -3,6 +3,7 @@ package restaurante.websocket;
 import com.google.gson.Gson;
 import javafx.application.Platform;
 import restaurante.api.PedidoAPI;
+import restaurante.models.ItemPedido;
 import restaurante.util.PedidoListener;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
@@ -28,10 +29,12 @@ public class PedidoWebSocketClientFX {
     private final Gson gson = new Gson();
 
     // Constructor privado para restringir instanciación directa (patrón singleton)
-    private PedidoWebSocketClientFX() {}
+    private PedidoWebSocketClientFX() {
+    }
 
     /**
      * Método estático para obtener la instancia única del cliente WebSocket.
+     *
      * @return Instancia única de PedidoWebSocketClientFX.
      */
     public static PedidoWebSocketClientFX getInstance() {
@@ -46,6 +49,7 @@ public class PedidoWebSocketClientFX {
 
     /**
      * Permite definir una acción personalizada que se ejecutará cuando la conexión WebSocket esté activa.
+     *
      * @param callback Acción a ejecutar (por ejemplo, mostrar notificación visual)
      */
     public void setOnConectadoCallback(Runnable callback) {
@@ -54,6 +58,7 @@ public class PedidoWebSocketClientFX {
 
     /**
      * Establece la conexión WebSocket y define los manejadores de eventos.
+     *
      * @param listener Objeto que recibirá el pedido cuando llegue un mensaje nuevo.
      */
     public void conectar(PedidoListener listener) {
@@ -113,6 +118,7 @@ public class PedidoWebSocketClientFX {
 
     /**
      * Verifica si el cliente WebSocket está conectado.
+     *
      * @return true si la conexión está abierta; false en caso contrario.
      */
     public boolean estaConectado() {
@@ -121,22 +127,26 @@ public class PedidoWebSocketClientFX {
 
     /**
      * Envía un mensaje al servidor indicando que un producto está listo.
+     *
      * @param item El producto que ha sido preparado (cocinado).
      */
-    public void enviarProductoHecho(restaurante.models.ItemPedido item) {
+    public void enviarProductoHecho(ItemPedido item, int numeroMesa) {
         if (client != null && client.isOpen() && item != null) {
-            // Construcción manual del mensaje JSON
             String mensaje = String.format(
-                    "{\"tipo\":\"productoListo\", \"productoId\":%d, \"nombre\":\"%s\", \"cantidad\":%d}",
+                    "{\"tipo\":\"productoListo\", \"productoId\":%d, \"nombre\":\"%s\", \"cantidad\":%d, \"numeroMesa\":%d}",
                     item.getProducto().getId(),
                     item.getProducto().getNombre(),
-                    item.getCantidad()
+                    item.getCantidad(),
+                    numeroMesa
             );
 
-            // Envía el mensaje al servidor WebSocket
             client.send(mensaje);
-
             System.out.println("Notificación producto listo enviada: " + mensaje);
         }
     }
+    // Método viejo que mantiene compatibilidad
+    public void enviarProductoHecho(ItemPedido item) {
+        enviarProductoHecho(item, -1); // Usa -1 si no se conoce el número de mesa
+    }
+
 }

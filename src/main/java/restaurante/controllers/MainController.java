@@ -15,6 +15,8 @@ import restaurante.models.Mesa;
 import restaurante.services.MesaService;
 import restaurante.websocket.PedidoWebSocketClientFX;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -238,12 +240,17 @@ public class MainController {
     @FXML
     private void abrirReadme() {
         try {
-            java.awt.Desktop.getDesktop().open(new java.io.File("readme.md"));
+            File readme = new File("readme.md");
+            if (readme.exists()) {
+                Desktop.getDesktop().open(readme);
+            } else {
+                System.err.println("❌ readme.md no encontrado en: " + readme.getAbsolutePath());
+            }
         } catch (IOException e) {
-            System.err.println("❌ No se pudo abrir el archivo README.md");
             e.printStackTrace();
         }
     }
+
 
 
     // Cierra la aplicación

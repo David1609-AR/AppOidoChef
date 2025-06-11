@@ -29,6 +29,7 @@
         <columns>
             <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
             <TableColumn fx:id="colUsername" text="Usuario" prefWidth="200"/>
+            <TableColumn fx:id="colPassword" text="Contraseña" prefWidth="200"/>
         </columns>
     </TableView>
 </VBox>

@@ -32,7 +32,7 @@ public class RestServer {
      */
     public static void init() {
         // Establecer IP local y puerto de escucha
-        ipAddress("192.168.1.16");
+        ipAddress("0.0.0.0");
         port(4567);
 
         // WebSocket para actualizar pedidos en tiempo real desde clientes

@@ -155,7 +155,7 @@ public class CocinaController {
                             Button btnListo = new Button("Listo");
                             btnListo.setOnAction(ev -> {
                                 btnListo.setDisable(true);
-                                PedidoWebSocketClientFX.getInstance().enviarProductoHecho(item);
+                                PedidoWebSocketClientFX.getInstance().enviarProductoHecho(item, numeroMesa);
                             });
 
                             // Botón "Eliminar" para quitarlo de la vista
