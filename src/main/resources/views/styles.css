@@ -1,102 +1,87 @@
+
+/* Estilo inspirado en los años 60 con paleta de colores retro */
+
 .root {
-    -fx-font-family: "Segoe UI", sans-serif;
-    -fx-font-size: 14px;
-    -fx-background-color: #F9EBC7; /* crema */
+    -fx-font-family: 'Verdana', sans-serif;
+    -fx-background-color: #fdf0d5; /* fondo crema retro */
 }
 
-.label, .text {
-    -fx-text-fill: #3C2A25; /* marrón oscuro */
-}
-
+/* Título de la app */
 .app-title {
-    -fx-font-size: 20px;
+    -fx-font-size: 26px;
+    -fx-text-fill: #5b3c00;
     -fx-font-weight: bold;
-    -fx-text-fill: #127179; /* verde petróleo */
+    -fx-padding: 15 0 20 0;
 }
 
-.sidebar {
-    -fx-background-color: #59dacf; /* salmón claro */
-    -fx-padding: 20;
-    -fx-border-color: #B7ADAC;
-    -fx-border-width: 0 1px 0 0;
+/* Etiquetas */
+.label {
+    -fx-text-fill: #4e342e;
 }
 
-/* === BOTONES DE NAVEGACIÓN === */
-.btn-navbar {
-    -fx-background-color: #EB732B; /* naranja retro */
-    -fx-text-fill: #fff;
-    -fx-font-weight: bold;
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-border-color: #D1601A;
-}
-
-.btn-navbar:hover {
-    -fx-background-color: #C2561B;
-}
-
-/* === BOTONES DE CONTROL === */
-.btn-control {
-    -fx-background-color: #127179; /* verde petróleo */
-    -fx-text-fill: #ffffff;
-    -fx-font-weight: bold;
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-border-color: #0D5056;
-}
-
-.btn-control:hover {
-    -fx-background-color: #0D5056;
-}
-
-/* === ÁREAS DE PEDIDO Y MESAS === */
-.retro-pane {
-    -fx-background-color: #d5f472;
-    -fx-background-radius: 15;
-    -fx-padding: 15;
-    -fx-border-color: #B7ADAC;
-    -fx-border-radius: 15;
-}
-
-.retro-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #3C2A25;
+/* Panel de bienvenida */
+.welcome-title {
+    -fx-font-size: 28px;
+    -fx-text-fill: #6a4e42;
     -fx-font-weight: bold;
 }
 
-.retro-button {
-    -fx-background-color: #B7ADAC; /* gris lavanda */
-    -fx-text-fill: #3C2A25;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
+.welcome-subtitle {
+    -fx-font-size: 18px;
+    -fx-text-fill: #8d6e63;
+}
+
+/* ScrollPane general */
+.scroll-pane {
+    -fx-background-color: #f6eac2;
+    -fx-border-color: #cd9a5b;
     -fx-border-radius: 8;
-    -fx-border-color: #999;
 }
 
-.retro-button:hover {
-    -fx-background-color: #A59A99;
+/* Panel donde se muestran las mesas */
+.mesa-pane {
+    -fx-background-color: #fcecc9;
+    -fx-border-color: #b08968;
+    -fx-border-radius: 10;
 }
 
-/* === BOTONES DE CATEGORÍA === */
-.categoria-button {
-    -fx-background-color: #EB732B;
+/* Botones de navegación */
+.btn-navbar {
+    -fx-background-color: #5a9367;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-padding: 10 14;
-    -fx-border-color: #C2561B;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0.4, 0, 1);
 }
 
-.categoria-button:hover {
-    -fx-background-color: #C2561B;
+.btn-navbar:hover {
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
 }
 
-/* === LISTAS === */
-.list-view {
-    -fx-background-color: #e3d9d9;
-    -fx-border-color: #ccc;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
+/* Botones de control (mesa) */
+.btn-control {
+    -fx-background-color: #ffb347;
+    -fx-text-fill: #4e342e;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
 }
 
+.btn-control:hover {
+    -fx-opacity: 0.9;
+    -fx-cursor: hand;
+}
+
+/* Barra lateral */
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #fdf0d5, #fcecc9);
+    -fx-padding: 20;
+}
+
+/* Panel central con efecto tipo "glass" */
+.glass-center {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-background-radius: 20;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.5, 0, 2);
+}

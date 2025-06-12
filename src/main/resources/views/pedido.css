@@ -1,0 +1,174 @@
+.root {
+    -fx-font-family: "Verdana", "Segoe UI", sans-serif;
+    -fx-background-color: linear-gradient(to bottom, #fdf6e3, #f1e5c6);
+}
+
+/* Títulos principales */
+.retro-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5b3c00;
+    -fx-padding: 15 0 10 0;
+    -fx-effect: dropshadow(gaussian, #e8b26c, 3, 0.6, 0, 0);
+    -fx-alignment: center;
+}
+
+/* Contenedor central */
+.retro-pane {
+    -fx-background-color: #f6eedf;
+    -fx-background-radius: 15px;
+    -fx-padding: 20;
+    -fx-border-color: #d8c9a3;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2;
+}
+
+/* Botones de acción principales */
+#btnEnviar {
+    -fx-background-color: #5a9367;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+#btnCobrar {
+    -fx-background-color: #2a9d8f;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+#btnEliminar {
+    -fx-background-color: #e9c46a;
+    -fx-text-fill: #5b3c00;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+#btnCocina {
+    -fx-background-color: #e76f51;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+#btnCerrar {
+    -fx-background-color: #8d372c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+
+/* Botones de productos por categoría con estilo retro por color */
+
+/* Estilos por categoría */
+.btn-entrantes {
+    -fx-background-color: #f7c59f;
+    -fx-text-fill: #4e342e;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-ensaladas {
+    -fx-background-color: #a8e6cf;
+    -fx-text-fill: #2e7d32;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-platos-principales {
+    -fx-background-color: #ffd3b6;
+    -fx-text-fill: #6d4c41;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-carnes {
+    -fx-background-color: #ffaaa5;
+    -fx-text-fill: #5d4037;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-pescados {
+    -fx-background-color: #b2ebf2;
+    -fx-text-fill: #006064;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-sugerencias {
+    -fx-background-color: #e0c3fc;
+    -fx-text-fill: #4a148c;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-postres {
+    -fx-background-color: #fbcfe8;
+    -fx-text-fill: #880e4f;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-bebidas {
+    -fx-background-color: #c5cae9;
+    -fx-text-fill: #1a237e;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-refrescos {
+    -fx-background-color: #ffe082;
+    -fx-text-fill: #bf360c;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-vinos {
+    -fx-background-color: #d7ccc8;
+    -fx-text-fill: #4e342e;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.btn-botella-vino {
+    -fx-background-color: #bcaaa4;
+    -fx-text-fill: #3e2723;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+
+/* Categoría genérica por defecto */
+.button {
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-opacity: 0.9;
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: #e9c46a;
+    -fx-control-inner-background: rgba(248, 242, 234, 0.85);
+    -fx-border-color: #b08968;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: #e1ac58;
+    -fx-border-color: #d1954a;
+    -fx-border-radius: 10;
+}
+
+/* Scrollbar vertical */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #c47135;
+    -fx-background-radius: 8;
+}
+
+/* Etiquetas */
+.label {
+    -fx-text-fill: #4e342e;
+    -fx-font-size: 14px;
+}

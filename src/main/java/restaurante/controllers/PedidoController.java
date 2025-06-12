@@ -96,6 +96,11 @@ public class PedidoController {
                 Button btn = new Button(producto.getNombre() + " (" + producto.getPrecio() + "€)");
                 btn.setMaxWidth(Double.MAX_VALUE);
 
+// Normaliza nombre de categoría para CSS
+                String claseCategoria = "btn-" + categoria.toLowerCase().replaceAll("\\s+", "-");
+                btn.getStyleClass().add(claseCategoria);
+
+
                 // Al pulsar el botón se incrementa la cantidad del producto seleccionado
                 btn.setOnAction(e -> {
                     productosSeleccionados.merge(producto, 1, Integer::sum);

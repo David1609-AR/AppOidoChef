@@ -4,7 +4,7 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="restaurante.controllers.PedidoController"
-            stylesheets="@styles.css"
+            stylesheets="@pedido.css"
             prefWidth="800" prefHeight="600">
 
     <top>
@@ -23,11 +23,12 @@
             <ListView fx:id="listViewPedido" prefHeight="400" />
             <Label fx:id="labelTotal" text="Total: 0.00€" style="-fx-font-size: 16px;" />
             <HBox spacing="10">
-                <Button text="Enviar Pedido" onAction="#enviarPedido" styleClass="navbar" />
-                <Button text="Cobrar Mesa" onAction="#cobrarMesa" styleClass="navbar" />
-                <Button text="Eliminar Producto" onAction="#eliminarProductoSeleccionado" styleClass="navbar" />
-                <Button text="Ver Cocina" onAction="#abrirVistaCocina" styleClass="navbar" />
-                <Button text="Cerrar" onAction="#cerrarVentana" styleClass="navbar" />
+                <Button fx:id="btnEnviar" text="Enviar Pedido" onAction="#enviarPedido" styleClass="navbar"/>
+                <Button fx:id="btnCobrar" text="Cobrar Mesa" onAction="#cobrarMesa" styleClass="navbar"/>
+                <Button fx:id="btnEliminar" text="Eliminar Producto" onAction="#eliminarProductoSeleccionado" styleClass="navbar"/>
+                <Button fx:id="btnCocina" text="Ver Cocina" onAction="#abrirVistaCocina" styleClass="navbar"/>
+                <Button fx:id="btnCerrar" text="Cerrar" onAction="#cerrarVentana" styleClass="navbar"/>
+
             </HBox>
         </VBox>
     </center>

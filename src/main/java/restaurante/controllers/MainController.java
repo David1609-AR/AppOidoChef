@@ -1,24 +1,33 @@
 package restaurante.controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 import restaurante.models.Mesa;
 import restaurante.services.MesaService;
+import restaurante.services.UsuarioService;
 import restaurante.websocket.PedidoWebSocketClientFX;
 
 import java.awt.*;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.TextField;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import javafx.geometry.Insets;
+
 
 public class MainController {
     private Mesa mesa;
@@ -43,6 +52,7 @@ public class MainController {
     @FXML private Button btnEliminarMesa;
     @FXML private Button btnGuardarPosiciones;
     @FXML private Label estadoConexionLabel;
+    private static boolean yaLogueado = false;
 
     private final MesaService mesaService = new MesaService();
 
@@ -50,6 +60,15 @@ public class MainController {
     @FXML
     public void initialize() {
         PedidoWebSocketClientFX socket = PedidoWebSocketClientFX.getInstance();
+
+        if (!yaLogueado) {
+            if (!mostrarDialogoLogin()) {
+                // Usuario canceló o falló login
+                Platform.exit();
+                return;
+            }
+            yaLogueado = true;
+        }
 
         socket.setOnConectadoCallback(() -> {
             estadoConexionLabel.setText("🟢 Conectado al servidor");
@@ -68,6 +87,7 @@ public class MainController {
         configurarBotonesMesa();
         mostrarVistaMesas();
     }
+
 
     public void setMesa(Mesa mesa) {
         this.mesa = mesa;
@@ -250,8 +270,82 @@ public class MainController {
             e.printStackTrace();
         }
     }
+    private boolean mostrarDialogoLogin() {
+        while (true) {
+            Dialog<Pair<String, String>> dialog = new Dialog<>();
+            dialog.setTitle(" OIDOCHEF");
+            dialog.setHeaderText("-- OidoChef --  te la bienvenida  --");
 
+            // Añadir logo (reemplaza la ruta con tu logo en /resources/images/logo.png)
+            ImageView logo = new ImageView(new javafx.scene.image.Image(getClass().getResourceAsStream("/imagen/chef.png")));
+            logo.setFitHeight(150);
+            logo.setFitWidth(150);
+            dialog.setGraphic(logo);
 
+            // Botones
+            ButtonType loginButtonType = new ButtonType("Iniciar sesión", ButtonBar.ButtonData.OK_DONE);
+            dialog.getDialogPane().getButtonTypes().addAll(loginButtonType, ButtonType.CANCEL);
+
+            // Campos
+            GridPane grid = new GridPane();
+            grid.setHgap(10);
+            grid.setVgap(10);
+            grid.setPadding(new Insets(20, 150, 10, 10));
+
+            TextField usuarioField = new TextField();
+            usuarioField.setPromptText("Usuario");
+
+            PasswordField passwordField = new PasswordField();
+            passwordField.setPromptText("Contraseña");
+
+            grid.add(new Label("Usuario:"), 0, 0);
+            grid.add(usuarioField, 1, 0);
+            grid.add(new Label("Contraseña:"), 0, 1);
+            grid.add(passwordField, 1, 1);
+
+            dialog.getDialogPane().setContent(grid);
+
+            // Desactivar el botón hasta que haya algo en ambos campos
+            Node loginButton = dialog.getDialogPane().lookupButton(loginButtonType);
+            loginButton.setDisable(true);
+
+            usuarioField.textProperty().addListener((observable, oldValue, newValue) -> {
+                loginButton.setDisable(newValue.trim().isEmpty() || passwordField.getText().trim().isEmpty());
+            });
+            passwordField.textProperty().addListener((observable, oldValue, newValue) -> {
+                loginButton.setDisable(newValue.trim().isEmpty() || usuarioField.getText().trim().isEmpty());
+            });
+
+            dialog.setResultConverter(dialogButton -> {
+                if (dialogButton == loginButtonType) {
+                    return new Pair<>(usuarioField.getText(), passwordField.getText());
+                }
+                return null;
+            });
+
+            var resultado = dialog.showAndWait();
+
+            if (resultado.isEmpty()) {
+                // Usuario cerró el diálogo o presionó Cancelar
+                Platform.exit(); // cerrar app
+                return false;
+            }
+
+            String usuario = resultado.get().getKey();
+            String contrasena = resultado.get().getValue();
+
+            UsuarioService usuarioService = new UsuarioService();
+            if (usuarioService.autenticarUsuario(usuario, contrasena)) {
+                return true;
+            } else {
+                Alert alerta = new Alert(Alert.AlertType.ERROR);
+                alerta.setTitle("Error de autenticación");
+                alerta.setHeaderText(null);
+                alerta.setContentText("Usuario o contraseña incorrectos.");
+                alerta.showAndWait();
+            }
+        }
+    }
 
     // Cierra la aplicación
     @FXML
