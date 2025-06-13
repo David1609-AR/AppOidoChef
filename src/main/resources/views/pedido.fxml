@@ -21,7 +21,8 @@
         <VBox spacing="12" styleClass="retro-pane">
             <Label text="Pedido Actual" styleClass="retro-title" />
             <ListView fx:id="listViewPedido" prefHeight="400" />
-            <Label fx:id="labelTotal" text="Total: 0.00€" style="-fx-font-size: 16px;" />
+            <Label fx:id="labelTotal" text="Total: 0.00€"
+                   style="-fx-font-size: 16px; -fx-text-fill: #3e2723; -fx-font-weight: bold;" />
             <HBox spacing="10">
                 <Button fx:id="btnEnviar" text="Enviar Pedido" onAction="#enviarPedido" styleClass="navbar"/>
                 <Button fx:id="btnCobrar" text="Cobrar Mesa" onAction="#cobrarMesa" styleClass="navbar"/>

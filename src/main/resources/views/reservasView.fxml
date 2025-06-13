@@ -9,6 +9,7 @@
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="restaurante.controllers.NuevaReservaController"
       spacing="20"
+      stylesheets="@reserva.css"
       style="-fx-padding: 25; -fx-background-color: #f9f9f9;">
 
     <Text text="Crear Nueva Reserva" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>

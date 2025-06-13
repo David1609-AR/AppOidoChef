@@ -8,15 +8,16 @@
 
 /* Título de la app */
 .app-title {
-    -fx-font-size: 26px;
-    -fx-text-fill: #5b3c00;
+    -fx-font-size: 28px;
+    -fx-text-fill: #F18F01; /* Color retro vivo */
     -fx-font-weight: bold;
     -fx-padding: 15 0 20 0;
 }
 
+
 /* Etiquetas */
 .label {
-    -fx-text-fill: #4e342e;
+    -fx-text-fill: #faf3f3;
 }
 
 /* Panel de bienvenida */
@@ -47,13 +48,40 @@
 
 /* Botones de navegación */
 .btn-navbar {
-    -fx-background-color: #5a9367;
+    -fx-background-color: #3FB8AF;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0.4, 0, 1);
+}
+.btn-reser {
+    -fx-background-color: #FBE18C;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-radius: 10;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0.4, 0, 1);
 }
-
+.btn-res {
+    -fx-background-color: #F18F01;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0.4, 0, 1);
+}
+.btn-ver {
+    -fx-background-color: #b80505;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0.4, 0, 1);
+}
+.btn-vermesas {
+    -fx-background-color: #0B3C49;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0.4, 0, 1);
+}
 .btn-navbar:hover {
     -fx-opacity: 0.85;
     -fx-cursor: hand;
@@ -74,7 +102,7 @@
 
 /* Barra lateral */
 .sidebar {
-    -fx-background-color: linear-gradient(to bottom, #fdf0d5, #fcecc9);
+    -fx-background-color: linear-gradient(to bottom, #062E36, #062E36);
     -fx-padding: 20;
 }
 

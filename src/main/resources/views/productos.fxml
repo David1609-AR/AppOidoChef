@@ -4,12 +4,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="restaurante.controllers.AgregarController"
       spacing="15"
-      style="-fx-padding: 20; -fx-background-color: #f9f9f9;">
+      stylesheets="@/views/producto.css"
+      style="-fx-padding: 20;">
+
 
     <Text text="Gestión de Productos" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
 

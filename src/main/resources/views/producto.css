@@ -1,0 +1,67 @@
+.root {
+    -fx-font-family: "Segoe UI", "Verdana", sans-serif;
+    -fx-background-color: #fdf6e3;
+}
+
+/* Título */
+Text {
+    -fx-fill: #5b3c00;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #4e342e;
+    -fx-font-size: 12px;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: #fff8e1;
+    -fx-border-color: #d8c9a3;
+    -fx-border-radius: 8;
+    -fx-padding: 5;
+    -fx-font-size: 12px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f4c95d;
+}
+
+.table-column {
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Inputs */
+.text-field, .combo-box, .check-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b0a18e;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 4;
+    -fx-font-size: 12px;
+}
+
+/* Mensaje de estado */
+#productoStatus {
+    -fx-text-fill: #d32f2f;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: #f4a261;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-background-radius: 6;
+    -fx-padding: 5 12;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #e76f51;
+    -fx-opacity: 0.9;
+}

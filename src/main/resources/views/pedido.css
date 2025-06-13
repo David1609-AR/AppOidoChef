@@ -1,9 +1,10 @@
+/* Estilo base */
 .root {
     -fx-font-family: "Verdana", "Segoe UI", sans-serif;
     -fx-background-color: linear-gradient(to bottom, #fdf6e3, #f1e5c6);
 }
 
-/* Títulos principales */
+/* Título */
 .retro-title {
     -fx-font-size: 26px;
     -fx-font-weight: bold;
@@ -13,7 +14,7 @@
     -fx-alignment: center;
 }
 
-/* Contenedor central */
+/* Panel */
 .retro-pane {
     -fx-background-color: #f6eedf;
     -fx-background-radius: 15px;
@@ -23,129 +24,76 @@
     -fx-border-width: 2;
 }
 
-/* Botones de acción principales */
-#btnEnviar {
-    -fx-background-color: #5a9367;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 6;
-}
-#btnCobrar {
-    -fx-background-color: #2a9d8f;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 6;
-}
-#btnEliminar {
-    -fx-background-color: #e9c46a;
-    -fx-text-fill: #5b3c00;
-    -fx-font-weight: bold;
-    -fx-background-radius: 6;
-}
-#btnCocina {
-    -fx-background-color: #e76f51;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 6;
-}
-#btnCerrar {
-    -fx-background-color: #8d372c;
-    -fx-text-fill: white;
+/* Botones principales */
+#btnEnviar     { -fx-background-color: #5a9367;  -fx-text-fill: white; }
+#btnCobrar     { -fx-background-color: #2a9d8f;  -fx-text-fill: white; }
+#btnEliminar   { -fx-background-color: #e9c46a;  -fx-text-fill: #3e2723; }
+#btnCocina     { -fx-background-color: #e76f51;  -fx-text-fill: white; }
+#btnCerrar     { -fx-background-color: #8d372c;  -fx-text-fill: white; }
+
+#btnEnviar, #btnCobrar, #btnEliminar, #btnCocina, #btnCerrar {
     -fx-font-weight: bold;
     -fx-background-radius: 6;
 }
 
-/* Botones de productos por categoría con estilo retro por color */
-
-/* Estilos por categoría */
+/* Botones de categoría */
 .btn-entrantes {
     -fx-background-color: #f7c59f;
-    -fx-text-fill: #4e342e;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
+    -fx-text-fill: #3e2723;
 }
-
 .btn-ensaladas {
     -fx-background-color: #a8e6cf;
-    -fx-text-fill: #2e7d32;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
+    -fx-text-fill: #1b5e20;
 }
-
 .btn-platos-principales {
     -fx-background-color: #ffd3b6;
-    -fx-text-fill: #6d4c41;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
+    -fx-text-fill: #4e342e;
 }
-
 .btn-carnes {
     -fx-background-color: #ffaaa5;
-    -fx-text-fill: #5d4037;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
+    -fx-text-fill: #3e2723;
 }
-
 .btn-pescados {
     -fx-background-color: #b2ebf2;
-    -fx-text-fill: #006064;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
+    -fx-text-fill: #004d40;
 }
-
 .btn-sugerencias {
     -fx-background-color: #e0c3fc;
     -fx-text-fill: #4a148c;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
 }
-
 .btn-postres {
     -fx-background-color: #fbcfe8;
-    -fx-text-fill: #880e4f;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
+    -fx-text-fill: #6a1b9a;
 }
-
 .btn-bebidas {
     -fx-background-color: #c5cae9;
     -fx-text-fill: #1a237e;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
 }
-
 .btn-refrescos {
     -fx-background-color: #ffe082;
-    -fx-text-fill: #bf360c;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
+    -fx-text-fill: #5d4037;
 }
-
 .btn-vinos {
     -fx-background-color: #d7ccc8;
     -fx-text-fill: #4e342e;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
 }
-
 .btn-botella-vino {
     -fx-background-color: #bcaaa4;
     -fx-text-fill: #3e2723;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
 }
 
-
-/* Categoría genérica por defecto */
+/* Generales */
 .button {
     -fx-font-size: 13px;
     -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
 }
 .button:hover {
     -fx-opacity: 0.9;
 }
 
-/* ListView */
+/* Lista de productos */
 .list-view {
     -fx-background-color: #e9c46a;
     -fx-control-inner-background: rgba(248, 242, 234, 0.85);
@@ -161,7 +109,7 @@
     -fx-border-radius: 10;
 }
 
-/* Scrollbar vertical */
+/* ScrollBar */
 .scroll-bar:vertical .thumb {
     -fx-background-color: #c47135;
     -fx-background-radius: 8;

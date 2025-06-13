@@ -17,16 +17,16 @@
                 <Label text="{OidoChef}" styleClass="app-title" />
 
                 <VBox spacing="32" alignment="CENTER" styleClass="navbar">
-                    <Button text="Ver Mesas" onAction="#loadVolverInicio" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button text="Ver Mesas" onAction="#loadVolverInicio" styleClass="btn-vermesas" maxWidth="200" minWidth="200" minHeight="40"/>
                     <Button text="Agregar Producto" onAction="#loadAgregarProducto" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
                     <Button text="Gestionar Usuarios" onAction="#loadGestionUsuarios" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
-                    <Button text="Nueva Reserva" onAction="#loadNuevaReserva" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
-                    <Button text="Ver Reservas" onAction="#loadVerReservas" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button text="Nueva Reserva" onAction="#loadNuevaReserva" styleClass="btn-reser" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button text="Ver Reservas" onAction="#loadVerReservas" styleClass="btn-reser" maxWidth="200" minWidth="200" minHeight="40"/>
                     <Separator />
                     <Button fx:id="btnAddMesa" text="Añadir Mesa" styleClass="btn-control" maxWidth="200" minWidth="200" minHeight="40"/>
                     <Button fx:id="btnEliminarMesa" text="Eliminar Mesa" styleClass="btn-control" maxWidth="200" minWidth="200" minHeight="40"/>
-                    <Button fx:id="btnGuardarPosiciones" text="Guardar Posiciones" styleClass="btn-control" maxWidth="200" minWidth="200" minHeight="40"/>
-                    <Button text="Ver README" onAction="#abrirReadme" styleClass="btn-navbar" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button fx:id="btnGuardarPosiciones" text="Guardar Posiciones" styleClass="btn-res" maxWidth="200" minWidth="200" minHeight="40"/>
+                    <Button text="Ver README" onAction="#abrirReadme" styleClass="btn-ver" maxWidth="200" minWidth="200" minHeight="40"/>
 
                 </VBox>
             </VBox>
